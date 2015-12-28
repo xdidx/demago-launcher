@@ -20,8 +20,9 @@ namespace gta_demago_launcher
     {
         public float version = 0;
         public float maxVersion = 0;
-        public string maxVersionDownloadLink = ""; 
-        public string maxVersionTexturesLink = ""; 
+        public string maxVersionDownloadLink = "";
+        public string texturesLink = ""; 
+        public string musicsLink = ""; 
     }
 
     static class DemagoWebService

@@ -163,8 +163,8 @@ namespace gta_demago_launcher
             string defaultScriptLocation = gtaInstallationPath + scriptFolderName + scriptName;
             string defaultBackupLocation = gtaInstallationPath + backupFolderName + scriptName;
 
-            B_desactivate.Enabled = true;
-            B_desactivate.Visible = true;
+            //B_desactivate.Enabled = true;
+            //B_desactivate.Visible = true;
 
             if (getScriptLocation() == defaultScriptLocation)
             {
@@ -223,52 +223,99 @@ namespace gta_demago_launcher
 
             scriptExists();
         }
-        
+
         private void B_update_mod_Click(object sender, EventArgs clickEvent)
         {
 
             versionResponse = DemagoWebService.checkCurrentVersion(getModFileHash());
             if (versionResponse != null && (versionResponse.maxVersion > versionResponse.version || versionResponse.version == 0) && versionResponse.maxVersionDownloadLink != "")
             {
-                var texturesLink = "";
-                if (CB_withTextures.Checked && versionResponse.maxVersionTexturesLink != "")
-                {
-                    texturesLink = versionResponse.maxVersionTexturesLink;
-                }
-                downloadAndExtract(versionResponse.maxVersionDownloadLink, texturesLink);
                 L_state.Text = "Téléchargement du mod en cours...";
+
+                List<string> toRemoveForMod = new List<string>(modFiles);
+                toRemoveForMod.Add(scriptFolderName+scriptName);
+
+                WebClient modWebClient = downloadAndExtract(versionResponse.maxVersionDownloadLink, toRemoveForMod.ToArray());
+                modWebClient.DownloadFileCompleted += (object sender1, AsyncCompletedEventArgs e1) =>
+                {
+                    L_state.Text = "Téléchargement des musiques en cours...";
+                    string[] toRemoveForMusics = { "Music/" };
+                    WebClient musicsWebClient = downloadAndExtract(versionResponse.musicsLink, toRemoveForMusics);
+                    musicsWebClient.DownloadFileCompleted += (object sender2, AsyncCompletedEventArgs e2) =>
+                    {
+                        if (CB_withTextures.Checked && versionResponse.texturesLink != "")
+                        {
+                            string[] toRemoveForTextures = { "mods/" };
+                            WebClient textures = downloadAndExtract(versionResponse.texturesLink, toRemoveForTextures);
+                            L_state.Text = "Téléchargement des textures en cours...";
+                        }
+                        else
+                        {
+                            L_state.Text = "Téléchargement terminé";
+                        }
+                    };
+                };
             }
         }
 
-        private void downloadAndExtract (string link, string secondLink = "")
+        private WebClient downloadAndExtract (string link, string[] filesToRemove)
         {
-            using (WebClient wc = new WebClient())
-            {
-                string tempZipPath = gtaInstallationPath + "temp.zip";
+            WebClient wc = new WebClient();
+            
+            string tempZipPath = gtaInstallationPath + "temp.zip";
 
-                wc.DownloadProgressChanged += (object senderb, DownloadProgressChangedEventArgs e) =>
+            wc.DownloadProgressChanged += (object senderb, DownloadProgressChangedEventArgs e) =>
+            {
+                PB_modDownload.Value = e.ProgressPercentage;
+            };
+            wc.DownloadFileCompleted += (object senderb, AsyncCompletedEventArgs e) =>
+            {
+                foreach (string fileName in filesToRemove)
                 {
-                    PB_modDownload.Value = e.ProgressPercentage;
-                };
-                wc.DownloadFileCompleted += (object senderb, AsyncCompletedEventArgs e) =>
+                    string currentFileBackupLocation = gtaInstallationPath + backupFolderName + fileName;
+                    string currentFileLocation = gtaInstallationPath + fileName;
+
+                    try
+                    {
+                        if (Directory.Exists(currentFileLocation))
+                        {
+                            System.IO.DirectoryInfo downloadedMessageInfo = new DirectoryInfo(currentFileLocation);
+                            foreach (System.IO.FileInfo file in downloadedMessageInfo.GetFiles()) file.Delete();
+                            foreach (System.IO.DirectoryInfo subDirectory in downloadedMessageInfo.GetDirectories()) subDirectory.Delete(true);
+                            Directory.Delete(currentFileLocation);
+                        }
+                        
+                        if (File.Exists(currentFileLocation))
+                            File.Delete(currentFileLocation);
+                    }
+                    catch (IOException exception)
+                    {
+                        MessageBox.Show("Une erreur est surevenue pendant la suppression : " + exception.Message);
+                    }
+                }
+
+                try
                 {
                     ZipFile.ExtractToDirectory(tempZipPath, gtaInstallationPath);
                     File.Delete(tempZipPath);
                     checkModVersion();
-                    if (secondLink != "")
-                    {
-                        downloadAndExtract(secondLink);
-                        L_state.Text = "Téléchargement des textures en cours...";
-                    }
-                };
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show("L'archive est corrompue. Merci de contacter un membre de l'équipe : "+ exception.Message);
+                }
+            };
 
-                wc.DownloadFileAsync(new System.Uri(versionResponse.maxVersionDownloadLink), tempZipPath);
-            }
+            wc.DownloadFileAsync(new System.Uri(link), tempZipPath);
+            return wc;
         }
 
         private void B_playGTA_Click(object sender, EventArgs e)
         {
-
+            if (checkInstallationPath())
+            {
+                System.Diagnostics.Process.Start(gtaInstallationPath + checkingFileName);
+            }
         }
     }
 }

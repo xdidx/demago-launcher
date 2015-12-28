@@ -34,12 +34,12 @@
             this.B_chooseGtaFile = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.L_modVersion = new System.Windows.Forms.Label();
-            this.B_desactivate = new System.Windows.Forms.Button();
             this.B_playGTA = new System.Windows.Forms.Button();
             this.B_update_mod = new System.Windows.Forms.Button();
             this.L_state = new System.Windows.Forms.Label();
-            this.PB_modDownload = new System.Windows.Forms.ProgressBar();
             this.CB_withTextures = new System.Windows.Forms.CheckBox();
+            this.PB_modDownload = new System.Windows.Forms.ProgressBar();
+            this.B_desactivate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // gtaLauncherFileDialog
@@ -86,21 +86,10 @@
             this.L_modVersion.TabIndex = 4;
             this.L_modVersion.Text = "...";
             // 
-            // B_desactivate
-            // 
-            this.B_desactivate.Enabled = false;
-            this.B_desactivate.Location = new System.Drawing.Point(277, 99);
-            this.B_desactivate.Name = "B_desactivate";
-            this.B_desactivate.Size = new System.Drawing.Size(269, 29);
-            this.B_desactivate.TabIndex = 2;
-            this.B_desactivate.Text = "Désactiver le mod";
-            this.B_desactivate.UseVisualStyleBackColor = true;
-            this.B_desactivate.Click += new System.EventHandler(this.B_desactivate_Click);
-            // 
             // B_playGTA
             // 
             this.B_playGTA.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_playGTA.Location = new System.Drawing.Point(12, 219);
+            this.B_playGTA.Location = new System.Drawing.Point(11, 186);
             this.B_playGTA.Name = "B_playGTA";
             this.B_playGTA.Size = new System.Drawing.Size(534, 37);
             this.B_playGTA.TabIndex = 5;
@@ -111,7 +100,7 @@
             // B_update_mod
             // 
             this.B_update_mod.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.B_update_mod.Location = new System.Drawing.Point(277, 134);
+            this.B_update_mod.Location = new System.Drawing.Point(277, 99);
             this.B_update_mod.Name = "B_update_mod";
             this.B_update_mod.Size = new System.Drawing.Size(269, 29);
             this.B_update_mod.TabIndex = 6;
@@ -129,36 +118,48 @@
             this.L_state.TabIndex = 7;
             this.L_state.Text = "Démarrage du programme...";
             // 
-            // PB_modDownload
-            // 
-            this.PB_modDownload.Location = new System.Drawing.Point(12, 134);
-            this.PB_modDownload.Name = "PB_modDownload";
-            this.PB_modDownload.Size = new System.Drawing.Size(259, 29);
-            this.PB_modDownload.TabIndex = 8;
-            // 
             // CB_withTextures
             // 
             this.CB_withTextures.AutoSize = true;
-            this.CB_withTextures.Location = new System.Drawing.Point(277, 170);
+            this.CB_withTextures.Location = new System.Drawing.Point(277, 134);
             this.CB_withTextures.Name = "CB_withTextures";
-            this.CB_withTextures.Size = new System.Drawing.Size(187, 17);
+            this.CB_withTextures.Size = new System.Drawing.Size(231, 17);
             this.CB_withTextures.TabIndex = 9;
-            this.CB_withTextures.Text = "Inclure les textures personnalisées";
+            this.CB_withTextures.Text = "Inclure les textures personnalisées (3.23Go)";
             this.CB_withTextures.UseVisualStyleBackColor = true;
+            // 
+            // PB_modDownload
+            // 
+            this.PB_modDownload.Location = new System.Drawing.Point(277, 157);
+            this.PB_modDownload.Name = "PB_modDownload";
+            this.PB_modDownload.Size = new System.Drawing.Size(268, 23);
+            this.PB_modDownload.TabIndex = 10;
+            // 
+            // B_desactivate
+            // 
+            this.B_desactivate.Enabled = false;
+            this.B_desactivate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.B_desactivate.Location = new System.Drawing.Point(11, 151);
+            this.B_desactivate.Name = "B_desactivate";
+            this.B_desactivate.Size = new System.Drawing.Size(259, 29);
+            this.B_desactivate.TabIndex = 11;
+            this.B_desactivate.Text = "Désactiver le mod";
+            this.B_desactivate.UseVisualStyleBackColor = true;
+            this.B_desactivate.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 439);
-            this.Controls.Add(this.CB_withTextures);
+            this.ClientSize = new System.Drawing.Size(558, 241);
+            this.Controls.Add(this.B_desactivate);
             this.Controls.Add(this.PB_modDownload);
+            this.Controls.Add(this.CB_withTextures);
             this.Controls.Add(this.B_chooseGtaFile);
             this.Controls.Add(this.L_state);
             this.Controls.Add(this.L_gtaInstallationPath);
             this.Controls.Add(this.B_update_mod);
             this.Controls.Add(this.B_playGTA);
-            this.Controls.Add(this.B_desactivate);
             this.Controls.Add(this.L_modVersion);
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -178,12 +179,12 @@
         private System.Windows.Forms.Button B_chooseGtaFile;
         private System.Windows.Forms.Label L_modVersion;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button B_desactivate;
         private System.Windows.Forms.Button B_playGTA;
         private System.Windows.Forms.Button B_update_mod;
         private System.Windows.Forms.Label L_state;
-        private System.Windows.Forms.ProgressBar PB_modDownload;
         private System.Windows.Forms.CheckBox CB_withTextures;
+        private System.Windows.Forms.ProgressBar PB_modDownload;
+        private System.Windows.Forms.Button B_desactivate;
     }
 }
 
