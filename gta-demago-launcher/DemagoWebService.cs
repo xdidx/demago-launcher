@@ -29,7 +29,7 @@ namespace gta_demago_launcher
     {
         public static WsVersionResponse checkCurrentVersion(string md5Checksum)
         {
-            WebRequest request = WebRequest.Create("http://did.sytes.net/projets/gta-demago/ws/version.php");
+            WebRequest request = WebRequest.Create("http://nesblog.com/gta-demago/ws/version.php");
             var postData = "checksum=" + md5Checksum;
             var data = Encoding.ASCII.GetBytes(postData);
 
