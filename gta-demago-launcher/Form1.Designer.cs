@@ -44,8 +44,8 @@
             // 
             // gtaLauncherFileDialog
             // 
-            this.gtaLauncherFileDialog.FileName = "GTA5.exe";
-            this.gtaLauncherFileDialog.Filter = "GTA5.exe|GTA5.exe";
+            this.gtaLauncherFileDialog.FileName = "GTAVLauncher.exe";
+            this.gtaLauncherFileDialog.Filter = "GTAVLauncher.exe|GTAVLauncher.exe";
             // 
             // L_gtaInstallationPath
             // 

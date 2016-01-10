@@ -18,7 +18,7 @@ namespace gta_demago_launcher
     public partial class Form1 : Form
     {
         private string gtaInstallationPath = "";
-        private string checkingFileName = "GTA5.exe";
+        private string checkingFileName = "GTAVLauncher.exe";
         private string backupFolderName = "gta-demago-backup/";
         private string scriptFolderName = "scripts/";
         private string scriptName = "DemagoScript.dll";
@@ -226,7 +226,6 @@ namespace gta_demago_launcher
 
         private void B_update_mod_Click(object sender, EventArgs clickEvent)
         {
-
             versionResponse = DemagoWebService.checkCurrentVersion(getModFileHash());
             if (versionResponse != null && (versionResponse.maxVersion > versionResponse.version || versionResponse.version == 0) && versionResponse.maxVersionDownloadLink != "")
             {
@@ -255,6 +254,10 @@ namespace gta_demago_launcher
                         }
                     };
                 };
+            }
+            else
+            {
+                L_state.Text = "Problème lors du téléchargement";
             }
         }
 
