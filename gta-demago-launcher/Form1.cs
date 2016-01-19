@@ -226,6 +226,8 @@ namespace gta_demago_launcher
 
         private void B_update_mod_Click(object sender, EventArgs clickEvent)
         {
+            B_playGTA.Enabled = false;
+
             versionResponse = DemagoWebService.checkCurrentVersion(getModFileHash()); 
             if (versionResponse != null && (versionResponse.maxVersion > versionResponse.version || versionResponse.version == 0) && versionResponse.maxVersionDownloadLink != "")
             {
@@ -251,6 +253,7 @@ namespace gta_demago_launcher
                         else
                         {
                             L_state.Text = "Téléchargement terminé";
+                            B_playGTA.Enabled = true;
                         }
                     };
                 };
@@ -258,6 +261,7 @@ namespace gta_demago_launcher
             else
             {
                 L_state.Text = "Problème lors du téléchargement";
+                B_playGTA.Enabled = true;
             }
         }
 
