@@ -226,7 +226,7 @@ namespace gta_demago_launcher
 
         private void B_update_mod_Click(object sender, EventArgs clickEvent)
         {
-            versionResponse = DemagoWebService.checkCurrentVersion(getModFileHash());
+            versionResponse = DemagoWebService.checkCurrentVersion(getModFileHash()); 
             if (versionResponse != null && (versionResponse.maxVersion > versionResponse.version || versionResponse.version == 0) && versionResponse.maxVersionDownloadLink != "")
             {
                 L_state.Text = "Téléchargement du mod en cours...";
