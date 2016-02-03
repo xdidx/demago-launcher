@@ -39,26 +39,28 @@ namespace gta_demago_launcher
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
             request.ContentLength = byteArray.Length;
-
-            using (Stream requestStream = request.GetRequestStream())
-            {
-                requestStream.Write(byteArray, 0, byteArray.Length);
-                requestStream.Close();
-            }
-
-            WebResponse response = request.GetResponse();
-            Stream dataStream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(dataStream);
-            string responseFromServer = reader.ReadToEnd();
-            reader.Close();
-            response.Close();
             try
             {
+                using (Stream requestStream = request.GetRequestStream())
+                {
+                    requestStream.Write(byteArray, 0, byteArray.Length);
+                    requestStream.Close();
+                }
+
+            
+                WebResponse response = request.GetResponse();
+                Stream dataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(dataStream);
+                string responseFromServer = reader.ReadToEnd();
+                reader.Close();
+                response.Close();
+            
                 WsVersionResponse versionResponse = JsonConvert.DeserializeObject<WsVersionResponse>(responseFromServer);
                 return versionResponse;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                MessageBox.Show("Erreur: "+e.Message);
                 return null;
             }
         }

@@ -40,6 +40,9 @@
             this.CB_withTextures = new System.Windows.Forms.CheckBox();
             this.PB_modDownload = new System.Windows.Forms.ProgressBar();
             this.B_desactivate = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.L_ErrorDescription = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gtaLauncherFileDialog
@@ -70,7 +73,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 54);
+            this.label2.Location = new System.Drawing.Point(14, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 19);
             this.label2.TabIndex = 1;
@@ -80,7 +83,7 @@
             // 
             this.L_modVersion.AutoSize = true;
             this.L_modVersion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_modVersion.Location = new System.Drawing.Point(135, 54);
+            this.L_modVersion.Location = new System.Drawing.Point(137, 35);
             this.L_modVersion.Name = "L_modVersion";
             this.L_modVersion.Size = new System.Drawing.Size(21, 19);
             this.L_modVersion.TabIndex = 4;
@@ -88,13 +91,16 @@
             // 
             // B_playGTA
             // 
+            this.B_playGTA.BackColor = System.Drawing.Color.Black;
+            this.B_playGTA.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.B_playGTA.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_playGTA.Location = new System.Drawing.Point(11, 186);
+            this.B_playGTA.ForeColor = System.Drawing.Color.Snow;
+            this.B_playGTA.Location = new System.Drawing.Point(12, 192);
             this.B_playGTA.Name = "B_playGTA";
             this.B_playGTA.Size = new System.Drawing.Size(534, 37);
             this.B_playGTA.TabIndex = 5;
             this.B_playGTA.Text = "Jouer à GTA V";
-            this.B_playGTA.UseVisualStyleBackColor = true;
+            this.B_playGTA.UseVisualStyleBackColor = false;
             this.B_playGTA.Click += new System.EventHandler(this.B_playGTA_Click);
             // 
             // B_update_mod
@@ -112,7 +118,7 @@
             // 
             this.L_state.AutoSize = true;
             this.L_state.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_state.Location = new System.Drawing.Point(13, 13);
+            this.L_state.Location = new System.Drawing.Point(13, 6);
             this.L_state.Name = "L_state";
             this.L_state.Size = new System.Drawing.Size(249, 24);
             this.L_state.TabIndex = 7;
@@ -147,11 +153,36 @@
             this.B_desactivate.UseVisualStyleBackColor = true;
             this.B_desactivate.Visible = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::gta_demago_launcher.Properties.Resources.gta_demago;
+            this.pictureBox1.Location = new System.Drawing.Point(445, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(101, 83);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // L_ErrorDescription
+            // 
+            this.L_ErrorDescription.AutoSize = true;
+            this.L_ErrorDescription.Cursor = System.Windows.Forms.Cursors.Default;
+            this.L_ErrorDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.L_ErrorDescription.ForeColor = System.Drawing.Color.Red;
+            this.L_ErrorDescription.Location = new System.Drawing.Point(19, 60);
+            this.L_ErrorDescription.Name = "L_ErrorDescription";
+            this.L_ErrorDescription.Size = new System.Drawing.Size(0, 18);
+            this.L_ErrorDescription.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(558, 241);
+            this.Controls.Add(this.L_ErrorDescription);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.B_desactivate);
             this.Controls.Add(this.PB_modDownload);
             this.Controls.Add(this.CB_withTextures);
@@ -165,8 +196,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "GTA Démago Launcher";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,6 +218,8 @@
         private System.Windows.Forms.CheckBox CB_withTextures;
         private System.Windows.Forms.ProgressBar PB_modDownload;
         private System.Windows.Forms.Button B_desactivate;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label L_ErrorDescription;
     }
 }
 

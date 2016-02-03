@@ -24,7 +24,7 @@ namespace gta_demago_launcher
         private string scriptName = "DemagoScript.dll";
         private WsVersionResponse versionResponse = null;
 
-        private string[] modFiles = { "ScriptHookVDotNet.dll", "ScriptHookV.dll", "dinput8.dll", "OpenIV.asi", "ScriptHookVDotNet.asi" };
+        private string[] modFiles = { "ScriptHookVDotNet.dll", "ScriptHookV.dll", "dinput8.dll", "OpenIV.asi", "ScriptHookVDotNet.asi", "scripts/irrKlang.NET4.dll" };
 
         public Form1()
         {
@@ -104,6 +104,12 @@ namespace gta_demago_launcher
             if (modFileHash == "")
             {
                 L_state.Text = "Mod non installé";
+                var updateMessageBox = MessageBox.Show("Le mod n'est pas installé. \nVoulez-vous télécharger le mod GTA Demago ?", "Le mod n'est pas installé", MessageBoxButtons.YesNo);
+
+                if (updateMessageBox == DialogResult.Yes)
+                {
+                    updateMod();
+                }
             }
             else
             {
@@ -127,9 +133,16 @@ namespace gta_demago_launcher
                         {
                             L_state.Text = "Une mise a jour du mod est disponible";
                             B_update_mod.Text = "Mettre à jour vers la version " + versionResponse.maxVersion;
+                            var updateMessageBox = MessageBox.Show("Votre version du mod n'est pas à jour. \nVoulez-vous télécharger le mod GTA Demago ?", "Le mod n'est pas à jour", MessageBoxButtons.YesNo);
+
+                            if(updateMessageBox == DialogResult.Yes)
+                            {
+                                updateMod();
+                            }
                         }
                         else if (versionResponse.maxVersion == versionResponse.version)
                         {
+                            L_state.Text = "Le mod est à jour";
                             B_update_mod.Enabled = false;
                         }
 
@@ -226,15 +239,20 @@ namespace gta_demago_launcher
 
         private void B_update_mod_Click(object sender, EventArgs clickEvent)
         {
+            updateMod();
+        }
+
+        private void updateMod()
+        {
             B_playGTA.Enabled = false;
 
-            versionResponse = DemagoWebService.checkCurrentVersion(getModFileHash()); 
+            versionResponse = DemagoWebService.checkCurrentVersion(getModFileHash());
             if (versionResponse != null && (versionResponse.maxVersion > versionResponse.version || versionResponse.version == 0) && versionResponse.maxVersionDownloadLink != "")
             {
                 L_state.Text = "Téléchargement du mod en cours...";
 
                 List<string> toRemoveForMod = new List<string>(modFiles);
-                toRemoveForMod.Add(scriptFolderName+scriptName);
+                toRemoveForMod.Add(scriptFolderName + scriptName);
 
                 WebClient modWebClient = downloadAndExtract(versionResponse.maxVersionDownloadLink, toRemoveForMod.ToArray());
                 modWebClient.DownloadFileCompleted += (object sender1, AsyncCompletedEventArgs e1) =>
@@ -309,7 +327,7 @@ namespace gta_demago_launcher
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show("L'archive est corrompue. Merci de contacter un membre de l'équipe : "+ exception.Message);
+                    MessageBox.Show("Une erreur est survenue. Merci de contacter un membre de l'équipe : "+ exception.Message);
                 }
             };
 
@@ -323,6 +341,11 @@ namespace gta_demago_launcher
             {
                 System.Diagnostics.Process.Start(gtaInstallationPath + checkingFileName);
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
