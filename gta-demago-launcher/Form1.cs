@@ -329,6 +329,8 @@ namespace gta_demago_launcher
                 {
                     MessageBox.Show("Une erreur est survenue. Merci de contacter un membre de l'équipe : "+ exception.Message);
                 }
+
+                PB_modDownload.Value = 0;
             };
 
             wc.DownloadFileAsync(new System.Uri(link), tempZipPath);
