@@ -258,6 +258,7 @@ namespace gta_demago_launcher
                 modWebClient.DownloadFileCompleted += (object sender1, AsyncCompletedEventArgs e1) =>
                 {
                     L_state.Text = "Téléchargement des musiques en cours...";
+                    
                     string[] toRemoveForMusics = { "Music/" };
                     WebClient musicsWebClient = downloadAndExtract(versionResponse.musicsLink, toRemoveForMusics);
                     musicsWebClient.DownloadFileCompleted += (object sender2, AsyncCompletedEventArgs e2) =>

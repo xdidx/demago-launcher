@@ -29,25 +29,14 @@ namespace gta_demago_launcher
     {
         public static WsVersionResponse checkCurrentVersion(string md5Checksum)
         {
-            WebRequest request = WebRequest.Create("http://did.sytes.net/projets/gta-demago/ws/version.php");
-            string postData = "checksum=" + md5Checksum;
-            byte[] byteArray = Encoding.UTF8.GetBytes(postData);
+            WebRequest request = WebRequest.Create("http://nesblog.com/gta-demago/ws/version.php?checksum=" + md5Checksum);
 
 
             //var data = Encoding.ASCII.GetBytes(postData);
 
-            request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
-            request.ContentLength = byteArray.Length;
             try
             {
-                using (Stream requestStream = request.GetRequestStream())
-                {
-                    requestStream.Write(byteArray, 0, byteArray.Length);
-                    requestStream.Close();
-                }
-
-            
                 WebResponse response = request.GetResponse();
                 Stream dataStream = response.GetResponseStream();
                 StreamReader reader = new StreamReader(dataStream);
