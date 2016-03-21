@@ -54,6 +54,7 @@ namespace gta_demago_launcher
                 if (File.Exists(gtaLauncherFileDialog.FileName))
                 {
                     gtaInstallationPath = Path.GetDirectoryName(gtaLauncherFileDialog.FileName) + "\\";
+                    B_update_mod.Enabled = true;
                 }
             }
 
@@ -95,23 +96,11 @@ namespace gta_demago_launcher
             return scriptLocation;
         }
 
-        private bool checkModVersion()
+        private void checkModVersion()
         {
-            scriptExists();
-
-            L_modVersion.Text = "?";
+            L_modVersion.Text = "Inconnu";
             string modFileHash = getModFileHash();
-            if (modFileHash == "")
-            {
-                L_state.Text = "Mod non installé";
-                var updateMessageBox = MessageBox.Show("Le mod n'est pas installé. \nVoulez-vous télécharger le mod GTA Demago ?", "Le mod n'est pas installé", MessageBoxButtons.YesNo);
-
-                if (updateMessageBox == DialogResult.Yes)
-                {
-                    updateMod();
-                }
-            }
-            else
+            if (modFileHash != "")
             {
                 B_update_mod.Enabled = true;
                 versionResponse = DemagoWebService.checkCurrentVersion(modFileHash);
@@ -125,7 +114,7 @@ namespace gta_demago_launcher
                     if (versionResponse.error == "1")
                     {
                         L_state.Text = versionResponse.message;
-                        B_update_mod.Enabled = false;
+                        B_update_mod.Enabled = true;
                     }
                     else
                     {
@@ -135,7 +124,7 @@ namespace gta_demago_launcher
                             B_update_mod.Text = "Mettre à jour vers la version " + versionResponse.maxVersion;
                             var updateMessageBox = MessageBox.Show("Votre version du mod n'est pas à jour. \nVoulez-vous télécharger le mod GTA Demago ?", "Le mod n'est pas à jour", MessageBoxButtons.YesNo);
 
-                            if(updateMessageBox == DialogResult.Yes)
+                            if (updateMessageBox == DialogResult.Yes)
                             {
                                 updateMod();
                             }
@@ -147,12 +136,33 @@ namespace gta_demago_launcher
                         }
 
                         L_modVersion.Text = versionResponse.version.ToString();
-                        return true;
                     }
                 }
             }
-
-            return false;
+            else
+            {
+                L_state.Text = "Mod non installé";
+                if (checkInstallationPath())
+                {
+                    var updateMessageBox = MessageBox.Show("Le mod n'est pas installé. \nVoulez-vous télécharger le mod GTA Demago ?", "Le mod n'est pas installé", MessageBoxButtons.YesNo);
+                    if (updateMessageBox == DialogResult.Yes)
+                    {
+                        updateMod();
+                    }
+                }
+                else
+                {
+                    var updateMessageBox = MessageBox.Show("Le jeu n'a pas été trouvé. \nVous devez sélectionner le repertoire d'installation pour lancer l'application", "Le jeu n'a pas été trouvé", MessageBoxButtons.OKCancel);
+                    if (updateMessageBox == DialogResult.OK)
+                    {
+                        B_chooseGtaFile.PerformClick();
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
+            }
         }
 
         private string getModFileHash()
