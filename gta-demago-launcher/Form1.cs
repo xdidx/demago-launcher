@@ -24,7 +24,12 @@ namespace gta_demago_launcher
         private string scriptName = "DemagoScript.dll";
         private WsVersionResponse versionResponse = null;
 
-        private string[] modFiles = { "ScriptHookVDotNet.dll", "ScriptHookV.dll", "dinput8.dll", "OpenIV.asi", "ScriptHookVDotNet.asi", "scripts/irrKlang.NET4.dll" };
+        private string[] modFiles = { "ScriptHookVDotNet.dll",
+                                            "ScriptHookV.dll",
+                                                "dinput8.dll",
+                                                 "OpenIV.asi",
+                                      "ScriptHookVDotNet.asi",
+                                  "scripts/irrKlang.NET4.dll" };
 
         public Form1()
         {
@@ -44,6 +49,7 @@ namespace gta_demago_launcher
             }
 
             checkModVersion();
+            this.B_desactivate.Enabled = scriptExists();
         }
 
         private void B_chooseGtaFile_Click(object sender, EventArgs e)
@@ -86,7 +92,7 @@ namespace gta_demago_launcher
                 scriptLocation = gtaInstallationPath + scriptFolderName + scriptName;
                 if (!File.Exists(scriptLocation))
                 {
-                    scriptLocation = gtaInstallationPath + backupFolderName + scriptName;
+                    scriptLocation = gtaInstallationPath + backupFolderName + scriptFolderName + scriptName;
                     if (!File.Exists(scriptLocation))
                     {
                         scriptLocation = "";
@@ -184,7 +190,7 @@ namespace gta_demago_launcher
         private bool scriptExists()
         {
             string defaultScriptLocation = gtaInstallationPath + scriptFolderName + scriptName;
-            string defaultBackupLocation = gtaInstallationPath + backupFolderName + scriptName;
+            string defaultBackupLocation = gtaInstallationPath + backupFolderName + scriptFolderName + scriptName;
 
             //B_desactivate.Enabled = true;
             //B_desactivate.Visible = true;
@@ -212,12 +218,15 @@ namespace gta_demago_launcher
             {
                 bool inBackupFolder = false, 
                     inScriptFolder = false;
-                string defaultBackupLocation = gtaInstallationPath + backupFolderName + scriptName;
+                string defaultBackupLocation = gtaInstallationPath + backupFolderName + scriptFolderName + scriptName;
                 string defaultScriptLocation = gtaInstallationPath + scriptFolderName + scriptName;
                 if (getScriptLocation() == defaultScriptLocation)
                 {
-                    if (!Directory.Exists(Path.GetDirectoryName(defaultBackupLocation)))
+                    if (!Directory.Exists(Path.GetDirectoryName(defaultBackupLocation))) { 
                         Directory.CreateDirectory(Path.GetDirectoryName(defaultBackupLocation));
+                        Directory.CreateDirectory(Path.GetDirectoryName(defaultBackupLocation));
+
+                    }
 
                     File.Move(defaultScriptLocation, defaultBackupLocation);
 
@@ -233,11 +242,11 @@ namespace gta_demago_launcher
                 {
                     string currentFileLocation = gtaInstallationPath + file;
                     string currentFileBackupLocation = gtaInstallationPath + backupFolderName + file;
-                    if (inScriptFolder)
+                    if (inScriptFolder && File.Exists(currentFileLocation))
                     {
                         File.Move(currentFileLocation, currentFileBackupLocation);
                     }
-                    else if (inBackupFolder)
+                    else if (inBackupFolder && File.Exists(currentFileBackupLocation))
                     {
                         File.Move(currentFileBackupLocation, currentFileLocation);
                     }
@@ -283,6 +292,8 @@ namespace gta_demago_launcher
                         {
                             L_state.Text = "Téléchargement terminé";
                             B_playGTA.Enabled = true;
+                            this.B_desactivate.Enabled = true;
+                            this.B_desactivate.Text = "Désactiver le mod";
                         }
                     };
                 };
@@ -360,5 +371,6 @@ namespace gta_demago_launcher
         {
 
         }
+
     }
 }

@@ -143,7 +143,6 @@
             // 
             // B_desactivate
             // 
-            this.B_desactivate.Enabled = false;
             this.B_desactivate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.B_desactivate.Location = new System.Drawing.Point(11, 151);
             this.B_desactivate.Name = "B_desactivate";
@@ -151,7 +150,7 @@
             this.B_desactivate.TabIndex = 11;
             this.B_desactivate.Text = "Désactiver le mod";
             this.B_desactivate.UseVisualStyleBackColor = true;
-            this.B_desactivate.Visible = false;
+            this.B_desactivate.Click += new System.EventHandler(this.B_desactivate_Click);
             // 
             // pictureBox1
             // 
