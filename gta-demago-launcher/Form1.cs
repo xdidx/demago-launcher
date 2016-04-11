@@ -36,6 +36,12 @@ namespace gta_demago_launcher
             InitializeComponent();
         }
 
+        private void changeState(string message, Color color)
+        {
+            L_state.Text = message;
+            L_state.ForeColor = color;
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             List<string> defaultPaths = new List<string> { "C:/Program Files/Rockstar Games/Grand Theft Auto V/", "C:/Program Files (x86)/Steam/steamapps/common/" };
@@ -79,7 +85,7 @@ namespace gta_demago_launcher
             {
                 L_gtaInstallationPath.Text = "Le fichier " + checkingFileName + " n\'a pas été trouvé";
                 B_chooseGtaFile.Text = "Selectionner le fichier";
-                L_state.Text = "GTA V non localisé";
+                changeState("GTA V non localisé", Color.Black);
             }
 
             return false;
@@ -112,21 +118,21 @@ namespace gta_demago_launcher
                 versionResponse = DemagoWebService.checkCurrentVersion(modFileHash);
                 if (versionResponse == null)
                 {
-                    L_state.Text = "Problème de connexion...";
+                    changeState("Problème de connexion...", Color.Black);
                     B_update_mod.Enabled = false;
                 }
                 else
                 {
                     if (versionResponse.error == "1")
                     {
-                        L_state.Text = versionResponse.message;
+                        changeState(versionResponse.message, Color.Red);
                         B_update_mod.Enabled = true;
                     }
                     else
                     {
                         if (versionResponse.maxVersion > versionResponse.version)
                         {
-                            L_state.Text = "Une mise a jour du mod est disponible";
+                            changeState("Une mise a jour du mod est disponible", Color.DarkRed);
                             B_update_mod.Text = "Mettre à jour vers la version " + versionResponse.maxVersion;
                             var updateMessageBox = MessageBox.Show("Votre version du mod n'est pas à jour. \nVoulez-vous télécharger le mod GTA Demago ?", "Le mod n'est pas à jour", MessageBoxButtons.YesNo);
 
@@ -137,7 +143,7 @@ namespace gta_demago_launcher
                         }
                         else if (versionResponse.maxVersion == versionResponse.version)
                         {
-                            L_state.Text = "Le mod est à jour";
+                            changeState("Le mod est à jour", Color.Black);
                             B_update_mod.Enabled = false;
                         }
 
@@ -147,7 +153,7 @@ namespace gta_demago_launcher
             }
             else
             {
-                L_state.Text = "Mod non installé";
+                changeState("Mod non installé", Color.Red);
                 if (checkInstallationPath())
                 {
                     var updateMessageBox = MessageBox.Show("Le mod n'est pas installé. \nVoulez-vous télécharger le mod GTA Demago ?", "Le mod n'est pas installé", MessageBoxButtons.YesNo);
@@ -268,16 +274,15 @@ namespace gta_demago_launcher
             versionResponse = DemagoWebService.checkCurrentVersion(getModFileHash());
             if (versionResponse != null && (versionResponse.maxVersion > versionResponse.version || versionResponse.version == 0) && versionResponse.maxVersionDownloadLink != "")
             {
-                L_state.Text = "Téléchargement du mod en cours...";
-
+                changeState("Téléchargement du mod en cours...", Color.Black);
                 List<string> toRemoveForMod = new List<string>(modFiles);
                 toRemoveForMod.Add(scriptFolderName + scriptName);
 
                 WebClient modWebClient = downloadAndExtract(versionResponse.maxVersionDownloadLink, toRemoveForMod.ToArray());
                 modWebClient.DownloadFileCompleted += (object sender1, AsyncCompletedEventArgs e1) =>
                 {
-                    L_state.Text = "Téléchargement des musiques en cours...";
-                    
+                    changeState("Téléchargement des musiques en cours...", Color.Black);
+
                     string[] toRemoveForMusics = { "Music/" };
                     WebClient musicsWebClient = downloadAndExtract(versionResponse.musicsLink, toRemoveForMusics);
                     musicsWebClient.DownloadFileCompleted += (object sender2, AsyncCompletedEventArgs e2) =>
@@ -286,11 +291,11 @@ namespace gta_demago_launcher
                         {
                             string[] toRemoveForTextures = { "mods/" };
                             WebClient textures = downloadAndExtract(versionResponse.texturesLink, toRemoveForTextures);
-                            L_state.Text = "Téléchargement des textures en cours...";
+                            changeState("Téléchargement des textures en cours...", Color.Black);
                         }
                         else
                         {
-                            L_state.Text = "Téléchargement terminé";
+                            changeState("Téléchargement terminé", Color.Green);
                             B_playGTA.Enabled = true;
                             this.B_desactivate.Enabled = true;
                             this.B_desactivate.Text = "Désactiver le mod";
@@ -300,7 +305,7 @@ namespace gta_demago_launcher
             }
             else
             {
-                L_state.Text = "Problème lors du téléchargement";
+                changeState("Problème lors du téléchargement", Color.Red);
                 B_playGTA.Enabled = true;
             }
         }
