@@ -42,6 +42,7 @@
             this.B_desactivate = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.L_ErrorDescription = new System.Windows.Forms.Label();
+            this.modInstructions = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +74,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 35);
+            this.label2.Location = new System.Drawing.Point(14, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 19);
             this.label2.TabIndex = 1;
@@ -83,7 +84,7 @@
             // 
             this.L_modVersion.AutoSize = true;
             this.L_modVersion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_modVersion.Location = new System.Drawing.Point(137, 35);
+            this.L_modVersion.Location = new System.Drawing.Point(137, 32);
             this.L_modVersion.Name = "L_modVersion";
             this.L_modVersion.Size = new System.Drawing.Size(21, 19);
             this.L_modVersion.TabIndex = 4;
@@ -118,7 +119,7 @@
             // 
             this.L_state.AutoSize = true;
             this.L_state.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_state.Location = new System.Drawing.Point(13, 6);
+            this.L_state.Location = new System.Drawing.Point(13, 3);
             this.L_state.Name = "L_state";
             this.L_state.Size = new System.Drawing.Size(249, 24);
             this.L_state.TabIndex = 7;
@@ -174,12 +175,23 @@
             this.L_ErrorDescription.Size = new System.Drawing.Size(0, 18);
             this.L_ErrorDescription.TabIndex = 13;
             // 
+            // modInstructions
+            // 
+            this.modInstructions.AutoSize = true;
+            this.modInstructions.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modInstructions.Location = new System.Drawing.Point(15, 57);
+            this.modInstructions.Name = "modInstructions";
+            this.modInstructions.Size = new System.Drawing.Size(298, 19);
+            this.modInstructions.TabIndex = 14;
+            this.modInstructions.Text = "Pour activer le mod en jeu, appuyer sur F5";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(558, 241);
+            this.Controls.Add(this.modInstructions);
             this.Controls.Add(this.L_ErrorDescription);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.B_desactivate);
@@ -221,6 +233,7 @@
         private System.Windows.Forms.Button B_desactivate;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label L_ErrorDescription;
+        private System.Windows.Forms.Label modInstructions;
     }
 }
 
