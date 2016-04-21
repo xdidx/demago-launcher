@@ -42,7 +42,7 @@
             this.B_desactivate = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.L_ErrorDescription = new System.Windows.Forms.Label();
-            this.modInstructions = new System.Windows.Forms.Label();
+            this.B_instructions = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +54,7 @@
             // L_gtaInstallationPath
             // 
             this.L_gtaInstallationPath.AutoSize = true;
-            this.L_gtaInstallationPath.Location = new System.Drawing.Point(14, 83);
+            this.L_gtaInstallationPath.Location = new System.Drawing.Point(14, 78);
             this.L_gtaInstallationPath.Name = "L_gtaInstallationPath";
             this.L_gtaInstallationPath.Size = new System.Drawing.Size(117, 13);
             this.L_gtaInstallationPath.TabIndex = 0;
@@ -137,15 +137,15 @@
             // 
             // PB_modDownload
             // 
-            this.PB_modDownload.Location = new System.Drawing.Point(277, 157);
+            this.PB_modDownload.Location = new System.Drawing.Point(12, 169);
             this.PB_modDownload.Name = "PB_modDownload";
-            this.PB_modDownload.Size = new System.Drawing.Size(268, 23);
+            this.PB_modDownload.Size = new System.Drawing.Size(259, 17);
             this.PB_modDownload.TabIndex = 10;
             // 
             // B_desactivate
             // 
             this.B_desactivate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.B_desactivate.Location = new System.Drawing.Point(11, 151);
+            this.B_desactivate.Location = new System.Drawing.Point(12, 134);
             this.B_desactivate.Name = "B_desactivate";
             this.B_desactivate.Size = new System.Drawing.Size(259, 29);
             this.B_desactivate.TabIndex = 11;
@@ -162,7 +162,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // L_ErrorDescription
             // 
@@ -175,15 +174,16 @@
             this.L_ErrorDescription.Size = new System.Drawing.Size(0, 18);
             this.L_ErrorDescription.TabIndex = 13;
             // 
-            // modInstructions
+            // B_instructions
             // 
-            this.modInstructions.AutoSize = true;
-            this.modInstructions.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modInstructions.Location = new System.Drawing.Point(15, 57);
-            this.modInstructions.Name = "modInstructions";
-            this.modInstructions.Size = new System.Drawing.Size(298, 19);
-            this.modInstructions.TabIndex = 14;
-            this.modInstructions.Text = "Pour activer le mod en jeu, appuyer sur F5";
+            this.B_instructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.B_instructions.Location = new System.Drawing.Point(277, 157);
+            this.B_instructions.Name = "B_instructions";
+            this.B_instructions.Size = new System.Drawing.Size(269, 29);
+            this.B_instructions.TabIndex = 14;
+            this.B_instructions.Text = "Voir les instructions";
+            this.B_instructions.UseVisualStyleBackColor = true;
+            this.B_instructions.Click += new System.EventHandler(this.B_instructions_Click);
             // 
             // Form1
             // 
@@ -191,7 +191,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(558, 241);
-            this.Controls.Add(this.modInstructions);
+            this.Controls.Add(this.B_instructions);
             this.Controls.Add(this.L_ErrorDescription);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.B_desactivate);
@@ -233,7 +233,7 @@
         private System.Windows.Forms.Button B_desactivate;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label L_ErrorDescription;
-        private System.Windows.Forms.Label modInstructions;
+        private System.Windows.Forms.Button B_instructions;
     }
 }
 

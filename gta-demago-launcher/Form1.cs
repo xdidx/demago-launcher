@@ -372,10 +372,10 @@ namespace gta_demago_launcher
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void B_instructions_Click(object sender, EventArgs e)
         {
-
+            string text = "---------GTA Démago---------\nGTA démago, création de mod GTA V de façon participative\nhttp://nesblog.com/gta-demago/\n\n---------Installation---------\nIl n'y a qu'à lancer GTA V et utiliser les commandes en jeu pour ouvrir le menu GTA Démago.\nSi cela ne fonctionne pas, n'hésitez pas à nous contacter sur le forum : http://gtavdemago.forumactif.org/\n\n---------Commandes---------\nOuvrir le menu GTA Démago 	: F5 / Appuyer 2 fois sur la roue des armes\nSe déplacer dans les menus 	: Touches directionnelles / Croix directionnelle\nValider : Validation téléphone / Touche Num 5 du pad\nAnnuler : Annulation téléphone / Touche Num 0 du pad\n\n\nVersion 1.1 - 19 Avril 2016 - (Joyeux Anniversaire RealMyop !)\n\n - Vous avez peur des mecs à poil ? Alors ce mod n'est pas pour vous... :)\n - L'équipe de développeurs tient à informer que les organes génitaux de petite taille visibles dans le jeu grâce au mod n'ont malheureusement pas étés choisis en fonction de ceux des membres de l'équipe";
+            MessageBox.Show(text);
         }
-
     }
 }
