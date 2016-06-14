@@ -117,380 +117,45 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="gtaLauncherFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="gtaLauncherFileDialog.Filter" xml:space="preserve">
-    <value>GTAVLauncher.exe|GTAVLauncher.exe</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="L_gtaInstallationPath.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="L_gtaInstallationPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 78</value>
-  </data>
   <data name="L_gtaInstallationPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 13</value>
-  </data>
-  <data name="L_gtaInstallationPath.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>57, 13</value>
   </data>
   <data name="L_gtaInstallationPath.Text" xml:space="preserve">
-    <value>Chargement en cours...</value>
-  </data>
-  <data name="&gt;&gt;L_gtaInstallationPath.Name" xml:space="preserve">
-    <value>L_gtaInstallationPath</value>
-  </data>
-  <data name="&gt;&gt;L_gtaInstallationPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;L_gtaInstallationPath.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;L_gtaInstallationPath.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="B_chooseGtaFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 99</value>
-  </data>
-  <data name="B_chooseGtaFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 29</value>
-  </data>
-  <data name="B_chooseGtaFile.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>Loading ...</value>
   </data>
   <data name="B_chooseGtaFile.Text" xml:space="preserve">
-    <value>Modifier le répertoire d'installation de GTA V</value>
-  </data>
-  <data name="&gt;&gt;B_chooseGtaFile.Name" xml:space="preserve">
-    <value>B_chooseGtaFile</value>
-  </data>
-  <data name="&gt;&gt;B_chooseGtaFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;B_chooseGtaFile.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;B_chooseGtaFile.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 12pt, style=Bold</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 32</value>
+    <value>Edit GTA V install path</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 19</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>95, 19</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Version du mod</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="L_modVersion.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="L_modVersion.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 12pt, style=Bold</value>
-  </data>
-  <data name="L_modVersion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 32</value>
-  </data>
-  <data name="L_modVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 19</value>
-  </data>
-  <data name="L_modVersion.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="L_modVersion.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="&gt;&gt;L_modVersion.Name" xml:space="preserve">
-    <value>L_modVersion</value>
-  </data>
-  <data name="&gt;&gt;L_modVersion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;L_modVersion.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;L_modVersion.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="B_playGTA.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>System</value>
-  </data>
-  <data name="B_playGTA.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 14.25pt, style=Bold</value>
-  </data>
-  <data name="B_playGTA.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 192</value>
-  </data>
-  <data name="B_playGTA.Size" type="System.Drawing.Size, System.Drawing">
-    <value>534, 37</value>
-  </data>
-  <data name="B_playGTA.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>Mod version</value>
   </data>
   <data name="B_playGTA.Text" xml:space="preserve">
-    <value>Jouer à GTA V</value>
-  </data>
-  <data name="&gt;&gt;B_playGTA.Name" xml:space="preserve">
-    <value>B_playGTA</value>
-  </data>
-  <data name="&gt;&gt;B_playGTA.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;B_playGTA.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;B_playGTA.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="B_update_mod.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="B_update_mod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>277, 99</value>
-  </data>
-  <data name="B_update_mod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>269, 29</value>
-  </data>
-  <data name="B_update_mod.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>Play GTA V</value>
   </data>
   <data name="B_update_mod.Text" xml:space="preserve">
-    <value>Télécharger le mod</value>
-  </data>
-  <data name="&gt;&gt;B_update_mod.Name" xml:space="preserve">
-    <value>B_update_mod</value>
-  </data>
-  <data name="&gt;&gt;B_update_mod.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;B_update_mod.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;B_update_mod.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="L_state.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="L_state.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14pt</value>
-  </data>
-  <data name="L_state.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 3</value>
+    <value>Download the mod</value>
   </data>
   <data name="L_state.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 24</value>
-  </data>
-  <data name="L_state.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>87, 24</value>
   </data>
   <data name="L_state.Text" xml:space="preserve">
-    <value>Démarrage du programme...</value>
-  </data>
-  <data name="&gt;&gt;L_state.Name" xml:space="preserve">
-    <value>L_state</value>
-  </data>
-  <data name="&gt;&gt;L_state.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;L_state.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;L_state.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="CB_withTextures.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="CB_withTextures.Location" type="System.Drawing.Point, System.Drawing">
-    <value>277, 134</value>
+    <value>Starting...</value>
   </data>
   <data name="CB_withTextures.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 17</value>
-  </data>
-  <data name="CB_withTextures.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>197, 17</value>
   </data>
   <data name="CB_withTextures.Text" xml:space="preserve">
-    <value>Inclure les ressources (&gt;3Go)</value>
-  </data>
-  <data name="&gt;&gt;CB_withTextures.Name" xml:space="preserve">
-    <value>CB_withTextures</value>
-  </data>
-  <data name="&gt;&gt;CB_withTextures.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CB_withTextures.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;CB_withTextures.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="PB_modDownload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 169</value>
-  </data>
-  <data name="PB_modDownload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 17</value>
-  </data>
-  <data name="PB_modDownload.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;PB_modDownload.Name" xml:space="preserve">
-    <value>PB_modDownload</value>
-  </data>
-  <data name="&gt;&gt;PB_modDownload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PB_modDownload.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PB_modDownload.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="B_desactivate.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="B_desactivate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 134</value>
-  </data>
-  <data name="B_desactivate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 29</value>
-  </data>
-  <data name="B_desactivate.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>Download resources files too (&gt;3Go)</value>
   </data>
   <data name="B_desactivate.Text" xml:space="preserve">
-    <value>Désactiver le mod</value>
-  </data>
-  <data name="&gt;&gt;B_desactivate.Name" xml:space="preserve">
-    <value>B_desactivate</value>
-  </data>
-  <data name="&gt;&gt;B_desactivate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;B_desactivate.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;B_desactivate.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>445, 10</value>
-  </data>
-  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 83</value>
-  </data>
-  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="L_ErrorDescription.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="L_ErrorDescription.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
-  </data>
-  <data name="L_ErrorDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 60</value>
-  </data>
-  <data name="L_ErrorDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 18</value>
-  </data>
-  <data name="L_ErrorDescription.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;L_ErrorDescription.Name" xml:space="preserve">
-    <value>L_ErrorDescription</value>
-  </data>
-  <data name="&gt;&gt;L_ErrorDescription.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;L_ErrorDescription.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;L_ErrorDescription.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="B_instructions.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="B_instructions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>277, 157</value>
-  </data>
-  <data name="B_instructions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>269, 29</value>
-  </data>
-  <data name="B_instructions.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>Desactivate the mod</value>
   </data>
   <data name="B_instructions.Text" xml:space="preserve">
-    <value>Voir les instructions</value>
-  </data>
-  <data name="&gt;&gt;B_instructions.Name" xml:space="preserve">
-    <value>B_instructions</value>
-  </data>
-  <data name="&gt;&gt;B_instructions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;B_instructions.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;B_instructions.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>45</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>558, 241</value>
+    <value>Show instructions</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -6663,29 +6328,5 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
-  </data>
-  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>574, 280</value>
-  </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>574, 280</value>
-  </data>
-  <data name="$this.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>GTA Démago Launcher</value>
-  </data>
-  <data name="&gt;&gt;gtaLauncherFileDialog.Name" xml:space="preserve">
-    <value>gtaLauncherFileDialog</value>
-  </data>
-  <data name="&gt;&gt;gtaLauncherFileDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form1</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

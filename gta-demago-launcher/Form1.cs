@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Compression;
+using System.Resources;
+using System.Collections;
 
 namespace gta_demago_launcher
 {
@@ -34,6 +32,10 @@ namespace gta_demago_launcher
         public Form1()
         {
             InitializeComponent();
+
+
+            //ResXResourceReader rr = new ResXResourceReader("../../Properties/Localization.fr-FR.resx");
+            MessageBox.Show(Properties.Strings.Hello);
         }
 
         private void changeState(string message, Color color)
